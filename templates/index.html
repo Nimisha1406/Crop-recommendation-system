@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-lg-8">
+
+        <div class="card shadow-lg border-0 rounded-4">
+
+            <div class="card-header bg-success text-white text-center">
+
+                <h2>Crop Recommendation System</h2>
+
+                <p class="mb-0">
+                    Enter Soil and Weather Details
+                </p>
+
+            </div>
+
+            <div class="card-body p-4">
+
+                <form action="/predict" method="POST">
+
+                    <div class="row">
+
+                        <div class="col-md-4 mb-3">
+
+                            <label class="form-label">
+                                Nitrogen (N)
+                            </label>
+
+                            <input type="number" class="form-control" name="N" step="0.01" required>
+
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+
+                            <label class="form-label">
+                                Phosphorus (P)
+                            </label>
+
+                            <input type="number" class="form-control" name="P" step="0.01" required>
+
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+
+                            <label class="form-label">
+                                Potassium (K)
+                            </label>
+
+                            <input type="number" class="form-control" name="K" step="0.01" required>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+
+                            <label class="form-label">
+                                Temperature (°C)
+                            </label>
+
+                            <input type="number" class="form-control" name="temperature" step="0.01" required>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <label class="form-label">
+                                Humidity (%)
+                            </label>
+
+                            <input type="number" class="form-control" name="humidity" step="0.01" required>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+
+                            <label class="form-label">
+                                Soil pH
+                            </label>
+
+                            <input type="number" class="form-control" name="ph" step="0.01" required>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <label class="form-label">
+                                Rainfall (mm)
+                            </label>
+
+                            <input type="number" class="form-control" name="rainfall" step="0.01" required>
+
+                        </div>
+
+                    </div>
+
+                    <div class="text-center mt-4">
+
+                        <button class="btn btn-success btn-lg px-5" type="submit">
+
+                            Predict Crop
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
